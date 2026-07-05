@@ -27,7 +27,7 @@ a2amesh             = product repository + product-specific plugin and skills
 | Zaptrace | `oaslananka/zaptrace` | Future | Should be published as its own product-level plugin when ready. |
 | A2A Mesh | `oaslananka/a2amesh` | Future | Should be published as its own multi-agent workflow plugin when ready. |
 
-The marketplace file intentionally does **not** expose active installable plugin entries yet. This prevents broken installs before the product repositories contain their own `.claude-plugin/plugin.json` manifests.
+The marketplace file now exposes active entries for product repositories that contain validated product-level manifests and runtime configuration. Future products remain under `planned_plugins` until their source repositories are ready.
 
 ## Recommended repository model
 
@@ -41,11 +41,17 @@ agent-tools/
 │   ├── plugins.md
 │   ├── skills.md
 │   ├── supported-agents.md
-│   └── publishing.md
+│   ├── publishing.md
+│   ├── agent-install-matrix.md
+│   └── chatgpt-apps-remote-mcp-plan.md
 ├── templates/
 │   ├── plugin.json
 │   ├── SKILL.md
-│   └── README-plugin-section.md
+│   ├── README-plugin-section.md
+│   └── agent-runtime/
+│       ├── codex-config.example.toml
+│       ├── vscode-mcp.example.json
+│       └── opencode.example.jsonc
 ├── examples/
 │   ├── kicad.md
 │   ├── easyeda.md
@@ -75,6 +81,7 @@ Until then, use this repository as the source of truth for templates, publicatio
 - Installation and publishing guides
 - Shared plugin and skill templates
 - Agent compatibility notes
+- OpenCode runtime template and install matrix
 - Generic, product-independent engineering skills
 - Examples for multi-agent engineering workflows
 

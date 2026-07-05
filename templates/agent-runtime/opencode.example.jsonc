@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "example-mcp-server": {
+      "type": "local",
+      "command": ["npx", "example-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "TRANSPORT": "stdio"
+      },
+      "timeout": 15000
+    }
+  },
+  "permission": {
+    "skill": {
+      "*": "ask"
+    }
+  }
+}

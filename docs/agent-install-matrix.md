@@ -4,10 +4,10 @@ This matrix documents how the active oaslananka agent-tool plugins should be con
 
 ## Active products
 
-| Product plugin | Source repo | Claude Code | Codex CLI | VS Code / GitHub Copilot | Generic MCP clients |
-| --- | --- | --- | --- | --- | --- |
-| `kicad-pro` | `oaslananka/kicad-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `uvx kicad-mcp-pro --transport stdio` |
-| `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `npx easyeda-mcp-pro` |
+| Product plugin | Source repo | Claude Code | Codex CLI | VS Code / GitHub Copilot | OpenCode | Generic MCP clients |
+| --- | --- | --- | --- | --- | --- | --- |
+| `kicad-pro` | `oaslananka/kicad-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `uvx kicad-mcp-pro --transport stdio` |
+| `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx easyeda-mcp-pro` |
 
 ## Claude Code
 
@@ -51,6 +51,17 @@ Each active product repository includes a VS Code workspace MCP example:
 
 Copy the relevant `servers` entry into your workspace or user MCP configuration. Keep write-capable tools behind the product's own approval, profile, or scope boundaries.
 
+## OpenCode
+
+Each active product repository should include:
+
+```text
+opencode.example.jsonc
+.opencode/skills/<skill-name>/SKILL.md
+```
+
+Use `opencode.example.jsonc` as a project config example. Copy it to `opencode.json` in a working project, or merge its `mcp` block into an existing OpenCode config. Product skills are mirrored under `.opencode/skills/` so OpenCode can load them through its native skill discovery.
+
 ## Cursor, Gemini CLI, and other MCP clients
 
 Most MCP-capable runtimes can use the product server's stdio command directly:
@@ -84,6 +95,7 @@ Before marking a product as active in this catalog:
 3. Product repo has `.mcp.json` for Claude Code project-local MCP discovery.
 4. Product repo has `.codex/config.example.toml`.
 5. Product repo has `.vscode/mcp.example.json`.
-6. Product repo documents runtime-specific setup and validation.
-7. Product repo exposes only real MCP tools and valid skill paths.
-8. This catalog points to the product repo as the source of truth.
+6. Product repo has `opencode.example.jsonc` and `.opencode/skills/<skill-name>/SKILL.md`.
+7. Product repo documents runtime-specific setup and validation.
+8. Product repo exposes only real MCP tools and valid skill paths.
+9. This catalog points to the product repo as the source of truth.

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "status": "catalog-active"
   },
   "plugins": [
@@ -52,6 +52,10 @@
         ],
         "docs": [
           "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
         ]
       },
       "runtime_config_source": {
@@ -99,6 +103,10 @@
         ],
         "docs": [
           "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
         ]
       },
       "runtime_config_source": {
