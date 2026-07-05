@@ -1,0 +1,58 @@
+name: Catalog Validation
+
+on:
+  pull_request:
+    paths:
+      - ".claude-plugin/marketplace.json"
+      - "templates/**"
+      - "docs/agent-install-matrix.md"
+      - ".github/workflows/catalog-validation.yml"
+  push:
+    branches: [main]
+    paths:
+      - ".claude-plugin/marketplace.json"
+      - "templates/**"
+      - "docs/agent-install-matrix.md"
+      - ".github/workflows/catalog-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate catalog files
+        run: |
+          python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
+          python3 -m json.tool templates/plugin.json >/dev/null
+          python3 -m json.tool templates/agent-runtime/vscode-mcp.example.json >/dev/null
+      - name: Validate marketplace structure
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          data = json.loads(Path('.claude-plugin/marketplace.json').read_text())
+          plugins = data.get('plugins')
+          planned = data.get('planned_plugins')
+          assert isinstance(plugins, list)
+          assert isinstance(planned, list)
+          names = [p['name'] for p in plugins]
+          assert len(names) == len(set(names)), 'duplicate active plugin names'
+          assert {'kicad-pro', 'easyeda-pro'}.issubset(set(names))
+          for plugin in plugins:
+              runtime = plugin.get('runtime_configs')
+              assert isinstance(runtime, dict) and runtime
+              for key in ['claude_code', 'codex', 'vscode_copilot', 'opencode', 'docs']:
+                  assert key in runtime, f"missing {key} for {plugin['name']}"
+              assert plugin.get('plugin_manifest', '').endswith('/.claude-plugin/plugin.json')
+          raw = Path('templates/agent-runtime/opencode.example.jsonc').read_text()
+          clean = re.sub(r',\s*([}\]])', r'\1', raw)
+          opencode = json.loads(clean)
+          assert isinstance(opencode.get('mcp'), dict) and opencode['mcp']
+          matrix = Path('docs/agent-install-matrix.md').read_text()
+          for word in ['Claude Code', 'Codex', 'VS Code', 'OpenCode']:
+              assert word in matrix, f'missing {word} in install matrix'
+          print('catalog validation ok')
+          PY
