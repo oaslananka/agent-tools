@@ -16,6 +16,7 @@ This keeps `agent-tools` clean while preserving version alignment between each M
 | Plugin | Source repository | Scope |
 | --- | --- | --- |
 | `kicad-pro` | `oaslananka/kicad-mcp` | Active KiCad MCP workflows for schematic, PCB, DRC/ERC, review, and fabrication automation. |
+| `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | Active EasyEDA MCP workflows for project automation, component search, validation, and design assistance. |
 
 ## Active vs planned plugins
 
@@ -30,7 +31,6 @@ A planned plugin becomes active only after the source repository contains a vali
 
 | Plugin | Source repository | Intended role |
 |---|---|---|
-| `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | EasyEDA MCP workflows for project automation, component search, validation, and design assistance. |
 | `zaptrace` | `oaslananka/zaptrace` | AI-native EDA operating system and broader electronic design workflows. |
 | `a2amesh` | `oaslananka/a2amesh` | Agent-to-agent mesh and CLI agent orchestration workflows. |
 

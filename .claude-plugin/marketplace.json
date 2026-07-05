@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "status": "catalog-active"
   },
   "plugins": [
@@ -39,9 +39,7 @@
         "pull_request": "https://github.com/oaslananka/kicad-mcp/pull/301",
         "merge_commit": "e3024e380b6cf108979660a91f40af8b26330ac1"
       }
-    }
-  ],
-  "planned_plugins": [
+    },
     {
       "name": "easyeda-pro",
       "description": "EasyEDA automation for AI agents through easyeda-mcp-pro: project workflows, component search, design checks, and EDA assistance.",
@@ -58,8 +56,20 @@
         "hardware",
         "electronics"
       ],
-      "activation_requirement": "Add .claude-plugin/plugin.json and tested EasyEDA-specific skills to the source repository before moving this entry to plugins."
-    },
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/easyeda-mcp-pro/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/easyeda-workflow/SKILL.md",
+        "skills/component-search/SKILL.md",
+        "skills/design-validation/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/easyeda-mcp-pro/pull/203",
+        "merge_commit": "374b1f3f28f65abd99f993e8c6953b6cd6557b54"
+      }
+    }
+  ],
+  "planned_plugins": [
     {
       "name": "zaptrace",
       "description": "AI-native operating system for electronic design and agent-assisted EDA workflows.",

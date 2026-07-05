@@ -23,7 +23,7 @@ a2amesh             = product repository + product-specific plugin and skills
 | Tool | Repository | Status | Notes |
 |---|---|---:|---|
 | KiCad MCP | `oaslananka/kicad-mcp` | Active | Product-level plugin manifest and KiCad-specific skills are available in the source repository. |
-| EasyEDA MCP Pro | `oaslananka/easyeda-mcp-pro` | Planned | Plugin manifest and EasyEDA workflow skills should be added in the source repository. |
+| EasyEDA MCP Pro | `oaslananka/easyeda-mcp-pro` | Active | Product-level plugin manifest and EasyEDA-specific skills are available in the source repository. |
 | Zaptrace | `oaslananka/zaptrace` | Future | Should be published as its own product-level plugin when ready. |
 | A2A Mesh | `oaslananka/a2amesh` | Future | Should be published as its own multi-agent workflow plugin when ready. |
 
@@ -105,8 +105,6 @@ This hub is designed to support a professional agent-tool ecosystem around engin
 ## Next milestones
 
 1. Validate the active `kicad-pro` marketplace entry against `oaslananka/kicad-mcp`.
-2. Add `.claude-plugin/plugin.json` to `oaslananka/easyeda-mcp-pro`.
-3. Add EasyEDA-specific workflow skills next to the EasyEDA MCP source code.
-4. Move `easyeda-pro` from planned catalog entries to active marketplace entries after its product manifest is merged.
-5. Test plugin installation with supported agent runtimes.
-6. Publish a first tagged release of this catalog.
+2. Validate the active `easyeda-pro` marketplace entry against `oaslananka/easyeda-mcp-pro`.
+3. Test plugin installation with supported agent runtimes.
+4. Publish a first tagged release of this catalog.
