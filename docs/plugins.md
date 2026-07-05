@@ -11,6 +11,12 @@ product repo      = MCP server code, product plugin, product skills, product exa
 
 This keeps `agent-tools` clean while preserving version alignment between each MCP server and its agent-facing instructions.
 
+## Active plugins
+
+| Plugin | Source repository | Scope |
+| --- | --- | --- |
+| `kicad-pro` | `oaslananka/kicad-mcp` | Active KiCad MCP workflows for schematic, PCB, DRC/ERC, review, and fabrication automation. |
+
 ## Active vs planned plugins
 
 The marketplace file uses two levels:
@@ -24,7 +30,6 @@ A planned plugin becomes active only after the source repository contains a vali
 
 | Plugin | Source repository | Intended role |
 |---|---|---|
-| `kicad-pro` | `oaslananka/kicad-mcp` | KiCad MCP workflows for schematic, PCB, DRC, review, and fabrication automation. |
 | `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | EasyEDA MCP workflows for project automation, component search, validation, and design assistance. |
 | `zaptrace` | `oaslananka/zaptrace` | AI-native EDA operating system and broader electronic design workflows. |
 | `a2amesh` | `oaslananka/a2amesh` | Agent-to-agent mesh and CLI agent orchestration workflows. |

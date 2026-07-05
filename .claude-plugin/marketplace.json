@@ -6,11 +6,10 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.1.0",
-    "status": "catalog-bootstrap"
+    "version": "0.2.0",
+    "status": "catalog-active"
   },
-  "plugins": [],
-  "planned_plugins": [
+  "plugins": [
     {
       "name": "kicad-pro",
       "description": "KiCad EDA automation for AI agents through kicad-mcp: schematic, PCB, DRC, validation, and fabrication workflows.",
@@ -27,8 +26,22 @@
         "hardware",
         "electronics"
       ],
-      "activation_requirement": "Add .claude-plugin/plugin.json and tested KiCad-specific skills to the source repository before moving this entry to plugins."
-    },
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/kicad-mcp/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/kicad-design-review/SKILL.md",
+        "skills/pcb-design/SKILL.md",
+        "skills/drc-check/SKILL.md",
+        "skills/fabrication-output/SKILL.md",
+        "skills/schematic-review/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/kicad-mcp/pull/301",
+        "merge_commit": "e3024e380b6cf108979660a91f40af8b26330ac1"
+      }
+    }
+  ],
+  "planned_plugins": [
     {
       "name": "easyeda-pro",
       "description": "EasyEDA automation for AI agents through easyeda-mcp-pro: project workflows, component search, design checks, and EDA assistance.",
