@@ -1,0 +1,41 @@
+{
+  "name": "example-plugin-name",
+  "version": "0.1.0",
+  "description": "Short description of what this plugin enables for AI agents.",
+  "author": {
+    "name": "oaslananka",
+    "url": "https://github.com/oaslananka"
+  },
+  "source": {
+    "source": "github",
+    "repo": "oaslananka/example-repository"
+  },
+  "category": "engineering",
+  "tags": [
+    "mcp",
+    "agents",
+    "automation"
+  ],
+  "mcp_servers": [
+    {
+      "name": "example-mcp-server",
+      "description": "MCP server exposed by this product repository.",
+      "install": {
+        "type": "manual",
+        "instructions": "Document the exact install command or package manager command in the product README."
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "example-skill",
+      "path": "skills/example-skill/SKILL.md",
+      "description": "Skill included with this product."
+    }
+  ],
+  "documentation": {
+    "readme": "README.md",
+    "examples": "examples/agent-workflows"
+  },
+  "status": "draft"
+}

@@ -1,0 +1,85 @@
+{
+  "name": "oaslananka-agent-tools",
+  "owner": {
+    "name": "oaslananka",
+    "url": "https://github.com/oaslananka"
+  },
+  "metadata": {
+    "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
+    "version": "0.1.0",
+    "status": "catalog-bootstrap"
+  },
+  "plugins": [],
+  "planned_plugins": [
+    {
+      "name": "kicad-pro",
+      "description": "KiCad EDA automation for AI agents through kicad-mcp: schematic, PCB, DRC, validation, and fabrication workflows.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/kicad-mcp"
+      },
+      "category": "engineering",
+      "tags": [
+        "kicad",
+        "pcb",
+        "eda",
+        "mcp",
+        "hardware",
+        "electronics"
+      ],
+      "activation_requirement": "Add .claude-plugin/plugin.json and tested KiCad-specific skills to the source repository before moving this entry to plugins."
+    },
+    {
+      "name": "easyeda-pro",
+      "description": "EasyEDA automation for AI agents through easyeda-mcp-pro: project workflows, component search, design checks, and EDA assistance.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/easyeda-mcp-pro"
+      },
+      "category": "engineering",
+      "tags": [
+        "easyeda",
+        "pcb",
+        "eda",
+        "mcp",
+        "hardware",
+        "electronics"
+      ],
+      "activation_requirement": "Add .claude-plugin/plugin.json and tested EasyEDA-specific skills to the source repository before moving this entry to plugins."
+    },
+    {
+      "name": "zaptrace",
+      "description": "AI-native operating system for electronic design and agent-assisted EDA workflows.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/zaptrace"
+      },
+      "category": "engineering",
+      "tags": [
+        "eda",
+        "pcb",
+        "electronics",
+        "agents",
+        "automation"
+      ],
+      "activation_requirement": "Publish product-level plugin and skills when the Zaptrace public workflow is ready."
+    },
+    {
+      "name": "a2amesh",
+      "description": "Agent-to-agent mesh workflows for connecting local and remote CLI agents through structured orchestration patterns.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/a2amesh"
+      },
+      "category": "developer-tools",
+      "tags": [
+        "a2a",
+        "agents",
+        "mesh",
+        "cli",
+        "orchestration"
+      ],
+      "activation_requirement": "Publish product-level plugin and agent skills when the distribution contract is stable."
+    }
+  ]
+}
