@@ -1,0 +1,10 @@
+# Generic Codex MCP configuration template.
+# Copy a product-specific block from the product repository when available.
+
+[[mcp_servers]]
+name = "example-mcp-server"
+command = "npx"
+args = ["example-mcp-server"]
+
+[mcp_servers.env]
+TRANSPORT = "stdio"

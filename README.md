@@ -106,5 +106,6 @@ This hub is designed to support a professional agent-tool ecosystem around engin
 
 1. Validate the active `kicad-pro` marketplace entry against `oaslananka/kicad-mcp`.
 2. Validate the active `easyeda-pro` marketplace entry against `oaslananka/easyeda-mcp-pro`.
-3. Test plugin installation with supported agent runtimes.
-4. Publish a first tagged release of this catalog.
+3. Track ChatGPT/OpenAI Apps remote MCP readiness separately from local MCP packaging.
+4. Test plugin installation with supported agent runtimes.
+5. Publish a first tagged release of this catalog.

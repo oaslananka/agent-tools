@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "status": "catalog-active"
   },
   "plugins": [
@@ -38,6 +38,21 @@
       "activation_source": {
         "pull_request": "https://github.com/oaslananka/kicad-mcp/pull/301",
         "merge_commit": "e3024e380b6cf108979660a91f40af8b26330ac1"
+      },
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ]
       }
     },
     {
@@ -66,6 +81,21 @@
       "activation_source": {
         "pull_request": "https://github.com/oaslananka/easyeda-mcp-pro/pull/203",
         "merge_commit": "374b1f3f28f65abd99f993e8c6953b6cd6557b54"
+      },
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ]
       }
     }
   ],

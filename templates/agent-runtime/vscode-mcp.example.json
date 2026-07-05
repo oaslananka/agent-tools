@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "example-mcp-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "example-mcp-server"
+      ],
+      "env": {
+        "TRANSPORT": "stdio"
+      }
+    }
+  }
+}
