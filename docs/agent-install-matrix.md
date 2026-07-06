@@ -8,6 +8,10 @@ This matrix documents how the active oaslananka agent-tool plugins should be con
 | --- | --- | --- | --- | --- | --- | --- |
 | `kicad-pro` | `oaslananka/kicad-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `uvx kicad-mcp-pro --transport stdio` |
 | `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx easyeda-mcp-pro` |
+| `ssh-mcp-pro` | `oaslananka/ssh-mcp-pro` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx ssh-mcp-pro` |
+| `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx infra-lens-mcp` |
+| `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx debug-recorder-mcp` |
+| `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx health-monitor-mcp` |
 
 ## Claude Code
 

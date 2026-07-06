@@ -17,6 +17,10 @@ This keeps `agent-tools` clean while preserving version alignment between each M
 | --- | --- | --- |
 | `kicad-pro` | `oaslananka/kicad-mcp` | Active KiCad MCP workflows for schematic, PCB, DRC/ERC, review, and fabrication automation. |
 | `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | Active EasyEDA MCP workflows for project automation, component search, validation, and design assistance. |
+| `ssh-mcp-pro` | `oaslananka/ssh-mcp-pro` | Active SSH operations workflows. |
+| `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | Active infrastructure visibility workflows. |
+| `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | Active debug recording workflows. |
+| `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | Active health monitoring workflows. |
 
 ## Active vs planned plugins
 

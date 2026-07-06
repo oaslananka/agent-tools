@@ -24,6 +24,10 @@ a2amesh             = product repository + product-specific plugin and skills
 |---|---|---:|---|
 | KiCad MCP | `oaslananka/kicad-mcp` | Active | Product-level plugin manifest and KiCad-specific skills are available in the source repository. |
 | EasyEDA MCP Pro | `oaslananka/easyeda-mcp-pro` | Active | Product-level plugin manifest and EasyEDA-specific skills are available in the source repository. |
+| SSH MCP Pro | `oaslananka/ssh-mcp-pro` | Active | Runtime package available. |
+| Infra Lens MCP | `oaslananka/infra-lens-mcp` | Active | Runtime package available. |
+| Debug Recorder MCP | `oaslananka/debug-recorder-mcp` | Active | Runtime package available. |
+| Health Monitor MCP | `oaslananka/health-monitor-mcp` | Active | Runtime package available. |
 | Zaptrace | `oaslananka/zaptrace` | Future | Should be published as its own product-level plugin when ready. |
 | A2A Mesh | `oaslananka/a2amesh` | Future | Should be published as its own multi-agent workflow plugin when ready. |
 

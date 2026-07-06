@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "status": "catalog-active"
   },
   "plugins": [
@@ -120,6 +120,213 @@
       "opencode_runtime_source": {
         "pull_request": "https://github.com/oaslananka/easyeda-mcp-pro/pull/205",
         "merge_commit": "4471cc646ac3f21f0a14539d4e007b3c78ee6834"
+      }
+    },
+    {
+      "name": "ssh-mcp-pro",
+      "description": "SSH operations MCP workflows for AI agents.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/ssh-mcp-pro"
+      },
+      "category": "operations",
+      "tags": [
+        "ssh",
+        "mcp",
+        "infrastructure",
+        "automation",
+        "devops"
+      ],
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/ssh-mcp-pro/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/ssh-operations/SKILL.md",
+        "skills/remote-host-workflow/SKILL.md",
+        "skills/security-guardrails/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/ssh-mcp-pro/pull/13",
+        "merge_commit": "de218159ab4102e053f3b9d12c4ed44e4629172f"
+      },
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
+        ]
+      },
+      "runtime_config_source": {
+        "pull_request": "https://github.com/oaslananka/ssh-mcp-pro/pull/13",
+        "merge_commit": "de218159ab4102e053f3b9d12c4ed44e4629172f"
+      },
+      "opencode_runtime_source": {
+        "pull_request": "https://github.com/oaslananka/ssh-mcp-pro/pull/13",
+        "merge_commit": "de218159ab4102e053f3b9d12c4ed44e4629172f"
+      }
+    },
+    {
+      "name": "infra-lens-mcp",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/infra-lens-mcp"
+      },
+      "category": "operations",
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/infra-lens-mcp/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/infrastructure-inspection/SKILL.md",
+        "skills/inventory-audit/SKILL.md",
+        "skills/baseline-drift-review/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/infra-lens-mcp/pull/74",
+        "merge_commit": "60904cc87ff9f41fa66afbf36f4a51b0d171c0c0"
+      },
+      "description": "infra-lens-mcp workflows for AI agents.",
+      "tags": [
+        "mcp",
+        "agent-tools"
+      ],
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
+        ]
+      },
+      "runtime_config_source": {
+        "pull_request": "https://github.com/oaslananka/infra-lens-mcp/pull/74",
+        "merge_commit": "60904cc87ff9f41fa66afbf36f4a51b0d171c0c0"
+      },
+      "opencode_runtime_source": {
+        "pull_request": "https://github.com/oaslananka/infra-lens-mcp/pull/74",
+        "merge_commit": "60904cc87ff9f41fa66afbf36f4a51b0d171c0c0"
+      }
+    },
+    {
+      "name": "debug-recorder-mcp",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/debug-recorder-mcp"
+      },
+      "category": "developer-tools",
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/debug-recorder-mcp/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/debug-session-capture/SKILL.md",
+        "skills/incident-replay/SKILL.md",
+        "skills/diagnostic-search/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/debug-recorder-mcp/pull/56",
+        "merge_commit": "939471a4ddc260cd0dec9d5fb1d13f5be2ef635b"
+      },
+      "description": "debug-recorder-mcp workflows for AI agents.",
+      "tags": [
+        "mcp",
+        "agent-tools"
+      ],
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
+        ]
+      },
+      "runtime_config_source": {
+        "pull_request": "https://github.com/oaslananka/debug-recorder-mcp/pull/56",
+        "merge_commit": "939471a4ddc260cd0dec9d5fb1d13f5be2ef635b"
+      },
+      "opencode_runtime_source": {
+        "pull_request": "https://github.com/oaslananka/debug-recorder-mcp/pull/56",
+        "merge_commit": "939471a4ddc260cd0dec9d5fb1d13f5be2ef635b"
+      }
+    },
+    {
+      "name": "health-monitor-mcp",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/health-monitor-mcp"
+      },
+      "category": "operations",
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/health-monitor-mcp/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/health-monitoring/SKILL.md",
+        "skills/uptime-incident-triage/SKILL.md",
+        "skills/alerting-dashboard/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/health-monitor-mcp/pull/68",
+        "merge_commit": "8214bebf13f2d56a7e34134fe946e7f13c6a3198"
+      },
+      "description": "health-monitor-mcp workflows for AI agents.",
+      "tags": [
+        "mcp",
+        "agent-tools"
+      ],
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-runtime-config.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
+        ]
+      },
+      "runtime_config_source": {
+        "pull_request": "https://github.com/oaslananka/health-monitor-mcp/pull/68",
+        "merge_commit": "8214bebf13f2d56a7e34134fe946e7f13c6a3198"
+      },
+      "opencode_runtime_source": {
+        "pull_request": "https://github.com/oaslananka/health-monitor-mcp/pull/68",
+        "merge_commit": "8214bebf13f2d56a7e34134fe946e7f13c6a3198"
       }
     }
   ],
