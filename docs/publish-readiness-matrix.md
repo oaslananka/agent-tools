@@ -6,10 +6,10 @@ This matrix tracks publish and agent-runtime readiness for active MCP products i
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `kicad-pro` | `oaslananka/kicad-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm + PyPI | Yes | Yes | KiCad CI/release gates | Active |
 | `easyeda-pro` | `oaslananka/easyeda-mcp-pro` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | EasyEDA metadata gates | Active |
-| `ssh-mcp-pro` | `oaslananka/ssh-mcp-pro` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | SSH safety policy in PR #15 | Active, safety PR pending |
-| `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | PR #76 | Yes | Schema export policy in PR #76 | Active, GHCR/policy PR pending |
-| `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | PR #57 | PR #57 | Privacy fixture scan in PR #57 | Active, review required |
-| `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | PR #70 | Yes | Monitoring contract policy in PR #70 | Active, GHCR/policy PR pending |
+| `ssh-mcp-pro` | `oaslananka/ssh-mcp-pro` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | SSH safety policy | Active |
+| `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Schema export policy | Active |
+| `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Privacy fixture scan | Active |
+| `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Monitoring contract policy | Active |
 
 ## Standard publish chain
 
@@ -35,3 +35,8 @@ This matrix tracks publish and agent-runtime readiness for active MCP products i
 - `publish-mcp-registry.yml`
 - `publish-ghcr.yml` when a Dockerfile exists
 - repo-specific safety or contract workflow
+
+- `ssh-mcp-pro`: safety policy merged in PR #15 (`4470c03`).
+- `infra-lens-mcp`: GHCR and schema policy merged in PR #76 (`e64bce9`).
+- `debug-recorder-mcp`: registry, GHCR, and privacy scan merged in PR #57 (`a93fd46`).
+- `health-monitor-mcp`: GHCR and monitoring policy merged in PR #70 (`1538444`).
