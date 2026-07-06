@@ -86,6 +86,7 @@ Until then, use this repository as the source of truth for templates, publicatio
 - Shared plugin and skill templates
 - Agent compatibility notes
 - OpenCode runtime template and install matrix
+- Publish readiness matrix: docs/publish-readiness-matrix.md
 - Generic, product-independent engineering skills
 - Examples for multi-agent engineering workflows
 
