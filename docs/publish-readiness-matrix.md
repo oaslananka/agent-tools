@@ -10,6 +10,7 @@ This matrix tracks publish and agent-runtime readiness for active MCP products i
 | `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Schema export policy | Active |
 | `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Privacy fixture scan | Active |
 | `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | Yes | Yes | Monitoring contract policy | Active |
+| `a2amesh` | `oaslananka/a2amesh` | Yes | Claude, Codex, VS Code/Copilot, OpenCode | npm | No standalone MCP image | Planned | Tool allowlist, approval, tenant-scope, audit, timeout, and SSRF gates | Active (local MCP) |
 
 ## Standard publish chain
 
@@ -40,3 +41,4 @@ This matrix tracks publish and agent-runtime readiness for active MCP products i
 - `infra-lens-mcp`: GHCR and schema policy merged in PR #76 (`e64bce9`).
 - `debug-recorder-mcp`: registry, GHCR, and privacy scan merged in PR #57 (`a93fd46`).
 - `health-monitor-mcp`: GHCR and monitoring policy merged in PR #70 (`1538444`).
+- `a2amesh`: plugin plan merged in PR #264 (`592269a`); standalone npm MCP distribution and runtime configs merged in PR #266 (`cf72f58`).

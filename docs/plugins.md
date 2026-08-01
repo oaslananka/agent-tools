@@ -21,6 +21,7 @@ This keeps `agent-tools` clean while preserving version alignment between each M
 | `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | Active infrastructure visibility workflows. |
 | `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | Active debug recording workflows. |
 | `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | Active health monitoring workflows. |
+| `a2amesh` | `oaslananka/a2amesh` | Active endpoint validation, approved task operations, and bounded MCP consumption workflows. |
 
 ## Active vs planned plugins
 
@@ -36,7 +37,6 @@ A planned plugin becomes active only after the source repository contains a vali
 | Plugin | Source repository | Intended role |
 |---|---|---|
 | `zaptrace` | `oaslananka/zaptrace` | AI-native EDA operating system and broader electronic design workflows. |
-| `a2amesh` | `oaslananka/a2amesh` | Agent-to-agent mesh and CLI agent orchestration workflows. |
 
 ## Product repository responsibilities
 

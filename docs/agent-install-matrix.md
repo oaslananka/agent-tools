@@ -12,6 +12,7 @@ This matrix documents how the active oaslananka agent-tool plugins should be con
 | `infra-lens-mcp` | `oaslananka/infra-lens-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx infra-lens-mcp` |
 | `debug-recorder-mcp` | `oaslananka/debug-recorder-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx debug-recorder-mcp` |
 | `health-monitor-mcp` | `oaslananka/health-monitor-mcp` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx health-monitor-mcp` |
+| `a2amesh` | `oaslananka/a2amesh` | `.claude-plugin/plugin.json` + `.mcp.json` | `.codex/config.example.toml` | `.vscode/mcp.example.json` | `opencode.example.jsonc` + `.opencode/skills/` | `npx -y -p @a2amesh/mcp@alpha a2amesh-mcp --transport stdio` |
 
 ## Claude Code
 
@@ -73,6 +74,7 @@ Most MCP-capable runtimes can use the product server's stdio command directly:
 ```bash
 uvx kicad-mcp-pro --transport stdio
 npx easyeda-mcp-pro
+npx -y -p @a2amesh/mcp@alpha a2amesh-mcp --transport stdio
 ```
 
 Clients that support HTTP or remote MCP should use the product documentation for transport-specific security, auth, and deployment requirements.

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Central catalog, documentation hub, templates, and marketplace metadata for oaslananka agent tools across engineering, EDA, PCB, MCP, and developer automation workflows.",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "status": "catalog-active"
   },
   "plugins": [
@@ -328,6 +328,62 @@
         "pull_request": "https://github.com/oaslananka/health-monitor-mcp/pull/68",
         "merge_commit": "8214bebf13f2d56a7e34134fe946e7f13c6a3198"
       }
+    },
+    {
+      "name": "a2amesh",
+      "description": "A2A Mesh workflows for endpoint validation, approved task operations, and security-bounded MCP consumption.",
+      "source": {
+        "source": "github",
+        "repo": "oaslananka/a2amesh"
+      },
+      "category": "developer-tools",
+      "tags": [
+        "a2a",
+        "agents",
+        "mesh",
+        "mcp",
+        "cli",
+        "orchestration"
+      ],
+      "status": "active",
+      "plugin_manifest": "https://github.com/oaslananka/a2amesh/blob/main/.claude-plugin/plugin.json",
+      "skills": [
+        "skills/a2a-endpoint-validation/SKILL.md",
+        "skills/a2a-task-operations/SKILL.md",
+        "skills/a2a-mcp-consumption/SKILL.md"
+      ],
+      "activation_source": {
+        "pull_request": "https://github.com/oaslananka/a2amesh/pull/264",
+        "merge_commit": "592269ae7325b1da0279f549863e82572fd2dd61"
+      },
+      "runtime_configs": {
+        "claude_code": [
+          ".claude-plugin/plugin.json",
+          ".mcp.json"
+        ],
+        "codex": [
+          ".codex/config.example.toml"
+        ],
+        "vscode_copilot": [
+          ".vscode/mcp.example.json"
+        ],
+        "docs": [
+          "docs/agent-plugin.md",
+          "docs/install.md"
+        ],
+        "opencode": [
+          "opencode.example.jsonc",
+          ".opencode/skills/"
+        ]
+      },
+      "runtime_config_source": {
+        "pull_request": "https://github.com/oaslananka/a2amesh/pull/266",
+        "merge_commit": "cf72f5872d31f3d788cfc1f0e3cfcd932e0eaebb"
+      },
+      "opencode_runtime_source": {
+        "pull_request": "https://github.com/oaslananka/a2amesh/pull/266",
+        "merge_commit": "cf72f5872d31f3d788cfc1f0e3cfcd932e0eaebb"
+      }
     }
   ],
   "planned_plugins": [
@@ -347,23 +403,6 @@
         "automation"
       ],
       "activation_requirement": "Publish product-level plugin and skills when the Zaptrace public workflow is ready."
-    },
-    {
-      "name": "a2amesh",
-      "description": "Agent-to-agent mesh workflows for connecting local and remote CLI agents through structured orchestration patterns.",
-      "source": {
-        "source": "github",
-        "repo": "oaslananka/a2amesh"
-      },
-      "category": "developer-tools",
-      "tags": [
-        "a2a",
-        "agents",
-        "mesh",
-        "cli",
-        "orchestration"
-      ],
-      "activation_requirement": "Publish product-level plugin and agent skills when the distribution contract is stable."
     }
   ]
 }
