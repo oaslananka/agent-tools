@@ -29,7 +29,7 @@ a2amesh             = product repository + product-specific plugin and skills
 | Debug Recorder MCP | `oaslananka/debug-recorder-mcp` | Active | Runtime package available. |
 | Health Monitor MCP | `oaslananka/health-monitor-mcp` | Active | Runtime package available. |
 | Zaptrace | `oaslananka/zaptrace` | Future | Should be published as its own product-level plugin when ready. |
-| A2A Mesh | `oaslananka/a2amesh` | Future | Should be published as its own multi-agent workflow plugin when ready. |
+| A2A Mesh | `oaslananka/a2amesh` | Active | Published `@a2amesh/mcp` server, product plugin, bounded skills, and runtime configurations are available. |
 
 The marketplace file now exposes active entries for product repositories that contain validated product-level manifests and runtime configuration. Future products remain under `planned_plugins` until their source repositories are ready.
 
@@ -68,7 +68,7 @@ agent-tools/
 
 ## Install concept
 
-Once product repositories publish valid plugin manifests, this repository can act as the marketplace entry point:
+This repository is the marketplace entry point for active product plugins:
 
 ```bash
 /plugin marketplace add oaslananka/agent-tools
@@ -76,7 +76,7 @@ Once product repositories publish valid plugin manifests, this repository can ac
 
 Then individual plugins can be installed from the marketplace according to the agent runtime being used.
 
-Until then, use this repository as the source of truth for templates, publication rules, and shared agent workflow documentation.
+Use each product repository as the source of truth for runtime behavior and this repository for discovery, templates, publication rules, and shared agent workflow documentation.
 
 ## What belongs here
 
@@ -116,8 +116,7 @@ This hub is designed to support a professional agent-tool ecosystem around engin
 
 ## Next milestones
 
-1. Validate the active `kicad-pro` marketplace entry against `oaslananka/kicad-mcp`.
-2. Validate the active `easyeda-pro` marketplace entry against `oaslananka/easyeda-mcp-pro`.
-3. Track ChatGPT/OpenAI Apps remote MCP readiness separately from local MCP packaging.
-4. Test plugin installation with supported agent runtimes.
-5. Publish a first tagged release of this catalog.
+1. Keep active plugin install paths verified against their product releases.
+2. Track ChatGPT/OpenAI Apps remote MCP readiness separately from local MCP packaging.
+3. Record tested and untested runtime support accurately.
+4. Publish the next catalog release after the active-entry matrix is verified.

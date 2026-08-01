@@ -2,15 +2,13 @@
 
 This document describes the intended installation model for the oaslananka agent-tool ecosystem.
 
-## Current bootstrap state
+## Current catalog state
 
-The repository is currently a catalog and documentation hub. Active marketplace plugin entries are intentionally disabled until each product repository contains its own plugin manifest.
+The repository is a catalog and documentation hub with active marketplace entries for products that publish validated product-level manifests, runtime configuration, and tested install paths. Products that have not met that bar remain under `planned_plugins`.
 
-This avoids broken installation flows where a marketplace entry points to a repository that does not yet expose `.claude-plugin/plugin.json`.
+## Marketplace installation
 
-## Marketplace installation concept
-
-When the product plugin manifests are ready, supported agent runtimes should be able to add this repository as a marketplace source:
+Supported agent runtimes can add this repository as a marketplace source:
 
 ```bash
 /plugin marketplace add oaslananka/agent-tools
@@ -18,9 +16,17 @@ When the product plugin manifests are ready, supported agent runtimes should be 
 
 After that, users can install individual plugins from the marketplace according to the command syntax supported by their agent runtime.
 
+A2A Mesh also exposes a standalone stdio MCP command through its published npm package:
+
+```bash
+npx -y -p @a2amesh/mcp@alpha a2amesh-mcp --transport stdio
+```
+
+Use the product repository's `.mcp.json`, Codex, VS Code/Copilot, or OpenCode examples for the required fail-closed environment configuration.
+
 ## Product-level installation model
 
-Each serious product should publish its own plugin and skills inside the product repository:
+Each product should publish its own plugin and skills inside the product repository:
 
 ```text
 kicad-mcp/
