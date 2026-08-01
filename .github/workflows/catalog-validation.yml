@@ -6,6 +6,7 @@ on:
       - ".claude-plugin/marketplace.json"
       - "templates/**"
       - "docs/agent-install-matrix.md"
+      - "docs/publishing.md"
       - ".github/workflows/catalog-validation.yml"
   push:
     branches: [main]
@@ -13,6 +14,7 @@ on:
       - ".claude-plugin/marketplace.json"
       - "templates/**"
       - "docs/agent-install-matrix.md"
+      - "docs/publishing.md"
       - ".github/workflows/catalog-validation.yml"
 
 permissions:
@@ -54,5 +56,15 @@ jobs:
           matrix = Path('docs/agent-install-matrix.md').read_text()
           for word in ['Claude Code', 'Codex', 'VS Code', 'OpenCode']:
               assert word in matrix, f'missing {word} in install matrix'
+          publishing = Path('docs/publishing.md').read_text()
+          for heading in [
+              '## Catalog release checklist',
+              '### 1. Validate catalog metadata',
+              '### 2. Decide whether a planned plugin may become active',
+              '### 3. Verify source repository notifications',
+              '### 4. Required checks before tagging',
+              '### 5. Roll back incorrect marketplace metadata',
+          ]:
+              assert heading in publishing, f'missing catalog release guidance: {heading}'
           print('catalog validation ok')
           PY
