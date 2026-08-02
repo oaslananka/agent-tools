@@ -11,6 +11,19 @@ Applies to active and future product plugins such as:
 - `zaptrace`
 - `a2amesh`
 
+## Checklist
+
+- [ ] Select first product candidate for remote MCP smoke testing.
+- [ ] Define hosted endpoint owner, domain, and deployment target.
+- [ ] Define transport path and health endpoint behavior.
+- [ ] Define auth model and user/session isolation.
+- [ ] Define read-only default tool allowlist.
+- [ ] Define gated write/export/manufacturing operation policy.
+- [ ] Add smoke test for initialize, list tools, and one safe diagnostic call.
+- [ ] Add logging, rate limiting, privacy, and data-retention policy.
+- [ ] Document product-specific limitations in the relevant product README.
+- [ ] Update `docs/chatgpt-apps-remote-mcp-plan.md` when decisions are finalized.
+
 ## Required decisions
 
 - Hosted endpoint owner and domain.
