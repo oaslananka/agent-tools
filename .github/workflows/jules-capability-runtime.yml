@@ -58,5 +58,6 @@ jobs:
           export JULES_CAP_RUNTIME_DIR="$PWD/tools/jules-cap"
           export JULES_CAP_CONFIG="$PWD/tools/jules-cap/capabilities.default.json"
           export JULES_REPO="$PWD"
-          jmcp tools playwright --json | grep -q '"name": "browser_navigate"'
-          jmcp tools playwright --json | grep -q '"name": "browser_snapshot"'
+          jmcp tools playwright --json > "$RUNNER_TEMP/playwright-tools.json"
+          grep -q '"name": "browser_navigate"' "$RUNNER_TEMP/playwright-tools.json"
+          grep -q '"name": "browser_snapshot"' "$RUNNER_TEMP/playwright-tools.json"
