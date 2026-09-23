@@ -11,7 +11,7 @@ if [[ ! -f "$DEST/.installed-commit" ]] || [[ "$(cat "$DEST/.installed-commit" 2
   mkdir -p "$ROOT"
   curl --fail --silent --show-error --location "$URL" -o "$tmp/runtime.tar.gz"
   tar -xzf "$tmp/runtime.tar.gz" -C "$tmp"
-  src="$(find "$tmp" -mindepth 2 -maxdepth 2 -type d -path '*/tools/jules-cap' -print -quit)"
+  src="$(find "$tmp" -mindepth 3 -maxdepth 3 -type d -path '*/tools/jules-cap' -print -quit)"
   [[ -n "$src" ]] || { echo "Pinned archive missing tools/jules-cap" >&2; exit 65; }
   stage="$ROOT/.stage-$COMMIT-$$"; rm -rf "$stage"; mkdir -p "$stage"
   cp -a "$src"/. "$stage"/
