@@ -1,0 +1,89 @@
+name: Jules Capability Runtime
+
+on:
+  pull_request:
+    paths:
+      - "tools/jules-cap/**"
+      - ".github/workflows/jules-capability-runtime.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/jules-cap/**"
+      - ".github/workflows/jules-capability-runtime.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pinned-install:
+    name: Immutable SHA install
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Resolve immutable source SHA
+        id: source
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          sha="${PR_HEAD_SHA:-$PUSH_SHA}"
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Install exact agent-tools commit
+        env:
+          CAP_SHA: ${{ steps.source.outputs.sha }}
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://raw.githubusercontent.com/oaslananka/agent-tools/$CAP_SHA/tools/jules-cap/install.sh" -o /tmp/jules-cap-install.sh
+          bash /tmp/jules-cap-install.sh "$CAP_SHA"
+          test "$(cat "$HOME/.local/share/oaslananka-jules-cap/$CAP_SHA/.installed-commit")" = "$CAP_SHA"
+          jcap doctor --json > /tmp/jcap-doctor.json
+          grep -q '"ok": true' /tmp/jcap-doctor.json
+
+  core:
+    name: Core runtime
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Static checks
+        run: |
+          set -euo pipefail
+          python3 -m py_compile tools/jules-cap/jcap.py tools/jules-cap/demo_server.py tools/jules-cap/plugins/repo-map.py tools/jules-cap/plugins/check-plan.py
+          for f in tools/jules-cap/*.sh tools/jules-cap/plugins/*.sh; do bash -n "$f"; done
+          python3 -m json.tool tools/jules-cap/capabilities.default.json >/dev/null
+      - name: Core runtime smoke
+        run: bash tools/jules-cap/smoke-test.sh
+
+  semantic:
+    name: Serena CLI contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash tools/jules-cap/bootstrap-serena.sh
+      - run: |
+          set -euo pipefail
+          SERENA="$HOME/.local/jules-cap/serena-1.7.0/venv/bin/serena"
+          "$SERENA" --version
+          "$SERENA" start-mcp-server --help | grep -q -- '--project-from-cwd'
+          "$SERENA" start-mcp-server --help | grep -q -- '--context'
+
+  browser:
+    name: Playwright MCP contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash tools/jules-cap/bootstrap.sh
+      - run: JULES_PLAYWRIGHT_INSTALL_SYSTEM_DEPS=1 bash tools/jules-cap/bootstrap-browser.sh
+      - run: |
+          set -euo pipefail
+          export JULES_CAP_RUNTIME_DIR="$PWD/tools/jules-cap"
+          export JULES_CAP_CONFIG="$PWD/tools/jules-cap/capabilities.default.json"
+          export JULES_REPO="$PWD"
+          jmcp tools playwright --json > "$RUNNER_TEMP/playwright-tools.json"
+          grep -q '"name": "browser_navigate"' "$RUNNER_TEMP/playwright-tools.json"
+          grep -q '"name": "browser_snapshot"' "$RUNNER_TEMP/playwright-tools.json"
