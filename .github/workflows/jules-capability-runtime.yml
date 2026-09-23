@@ -16,6 +16,32 @@ permissions:
   contents: read
 
 jobs:
+  pinned-install:
+    name: Immutable SHA install
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Resolve immutable source SHA
+        id: source
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          sha="${PR_HEAD_SHA:-$PUSH_SHA}"
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Install exact agent-tools commit
+        env:
+          CAP_SHA: ${{ steps.source.outputs.sha }}
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://raw.githubusercontent.com/oaslananka/agent-tools/$CAP_SHA/tools/jules-cap/install.sh" -o /tmp/jules-cap-install.sh
+          bash /tmp/jules-cap-install.sh "$CAP_SHA"
+          test "$(cat "$HOME/.local/share/oaslananka-jules-cap/$CAP_SHA/.installed-commit")" = "$CAP_SHA"
+          jcap doctor --json > /tmp/jcap-doctor.json
+          grep -q '"ok": true' /tmp/jcap-doctor.json
+
   core:
     name: Core runtime
     runs-on: ubuntu-latest
