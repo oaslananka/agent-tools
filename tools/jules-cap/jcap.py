@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Jules Capability Runtime.
 
-A small, repo-controlled extension layer for Jules. It lets the VM use arbitrary
-MCP servers (stdio or Streamable HTTP), repo-local skills, and deterministic
-local plugins through a single CLI.
+A small trusted terminal extension layer for Jules. It lets the VM use configured
+MCP servers, trusted skills, and deterministic plugins through a single CLI.
+Production installs are pinned to an immutable agent-tools commit; target
+repository content remains untrusted.
 """
 
 from __future__ import annotations
