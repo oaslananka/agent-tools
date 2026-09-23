@@ -15,6 +15,8 @@ if [[ ! -f "$DEST/.installed-commit" ]] || [[ "$(cat "$DEST/.installed-commit" 2
   [[ -n "$src" ]] || { echo "Pinned archive missing tools/jules-cap" >&2; exit 65; }
   stage="$ROOT/.stage-$COMMIT-$$"; rm -rf "$stage"; mkdir -p "$stage"
   cp -a "$src"/. "$stage"/
+  # Test fixtures belong to the source repository, not the Jules VM runtime.
+  rm -f "$stage/demo_server.py" "$stage/smoke-test.sh"
   printf '%s\n' "$COMMIT" > "$stage/.installed-commit"
   rm -rf "$DEST"; mv "$stage" "$DEST"
 fi
