@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "skillRoots": [
+    "$JULES_CAP_RUNTIME_DIR/skills"
+  ],
+  "mcpServers": {
+    "context7": {
+      "description": "Current library/framework documentation through Context7 MCP.",
+      "transport": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Authorization": {
+          "env": "CONTEXT7_API_KEY",
+          "prefix": "Bearer ",
+          "optional": true
+        }
+      },
+      "timeoutSeconds": 30
+    },
+    "playwright": {
+      "description": "Lazy persistent localhost Playwright MCP server.",
+      "transport": "http",
+      "url": "http://localhost:8931/mcp",
+      "timeoutSeconds": 60,
+      "ensure": {
+        "command": "bash",
+        "args": [
+          "$JULES_CAP_RUNTIME_DIR/ensure-playwright-http.sh"
+        ],
+        "cwd": "{repo}"
+      },
+      "persistentClient": true,
+      "lazy": true
+    },
+    "serena": {
+      "description": "Lazy persistent LSP-backed semantic intelligence.",
+      "transport": "stdio",
+      "command": "bash",
+      "args": [
+        "$JULES_CAP_RUNTIME_DIR/serena-mcp.sh"
+      ],
+      "cwd": "{repo}",
+      "ensure": {
+        "command": "bash",
+        "args": [
+          "$JULES_CAP_RUNTIME_DIR/bootstrap-serena.sh"
+        ],
+        "cwd": "{repo}"
+      },
+      "persistentClient": true,
+      "lazy": true
+    }
+  },
+  "plugins": {
+    "repo-context": {
+      "description": "Read-only repository context summary.",
+      "readOnly": true,
+      "command": "bash",
+      "args": [
+        "$JULES_CAP_RUNTIME_DIR/plugins/repo-context.sh"
+      ],
+      "cwd": "{repo}"
+    },
+    "repo-map": {
+      "description": "Compact read-only repository architecture inventory.",
+      "readOnly": true,
+      "command": "python3",
+      "args": [
+        "$JULES_CAP_RUNTIME_DIR/plugins/repo-map.py"
+      ],
+      "cwd": "{repo}"
+    },
+    "check-plan": {
+      "description": "Read-only project-native verification planner.",
+      "readOnly": true,
+      "command": "python3",
+      "args": [
+        "$JULES_CAP_RUNTIME_DIR/plugins/check-plan.py"
+      ],
+      "cwd": "{repo}"
+    },
+    "ast-grep": {
+      "description": "Pinned AST-aware structural search and rewrite.",
+      "readOnly": false,
+      "command": "bash",
+      "args": [
+        "$JULES_CAP_RUNTIME_DIR/ast-grep.sh"
+      ],
+      "cwd": "{repo}"
+    }
+  }
+}
